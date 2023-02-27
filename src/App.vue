@@ -1,17 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HeaderWord />
+  <TodoWord />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderWord from "./components/Header.vue";
+import TodoWord from "./components/Todos.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HeaderWord,
+    TodoWord,
+  },
+  data() {
+    return {
+      name: "Nguyen Xuan Chien",
+      isButtonDisabled: true,
+    };
+  },
+  methods: {
+    changeValue(event) {
+      this.name = event.target.value;
+    },
+  },
+};
 </script>
 
 <style>
@@ -21,6 +34,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
